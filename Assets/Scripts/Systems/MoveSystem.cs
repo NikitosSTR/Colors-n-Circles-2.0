@@ -16,12 +16,12 @@ namespace GameSystem.Systems
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.Speed));
+            return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.Speed, GameMatcher.Rotation));
         }
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.hasSpeed;
+            return entity.hasSpeed && entity.hasGameObject;
         }
 
         protected override void Execute(List<GameEntity> entities)
@@ -32,6 +32,8 @@ namespace GameSystem.Systems
                 var speed = entity.speed.value;
                 var movement = transform.up * speed * Time.deltaTime;
                 entity.gameObject.value.transform.position += movement;
+                
+                entity.ReplaceSpeed(0.0f);
             }
         }
     }
