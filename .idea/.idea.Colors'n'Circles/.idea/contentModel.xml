@@ -16,12 +16,19 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Component" t="Include">
+            <e p="GameObjectComponent.cs" t="Include" />
+            <e p="HealthComponent.cs" t="Include" />
+            <e p="SpeedComponent.cs" t="Include" />
+          </e>
           <e p="Generated" t="Include">
             <e p="Contexts.cs" t="Include" />
             <e p="Feature.cs" t="Include" />
             <e p="game" t="Include">
               <e p="Components" t="Include">
-                <e p="GameGameSystemHealthComponent.cs" t="Include" />
+                <e p="GameGameObjectComponent.cs" t="Include" />
+                <e p="GameHealthComponent.cs" t="Include" />
+                <e p="GameSpeedComponent.cs" t="Include" />
               </e>
               <e p="GameAttribute.cs" t="Include" />
               <e p="GameComponentsLookup.cs" t="Include" />
@@ -37,7 +44,9 @@
               <e p="InputMatcher.cs" t="Include" />
             </e>
           </e>
-          <e p="HealthComponent.cs" t="Include" />
+          <e p="Systems" t="Include">
+            <e p="MoveSystem.cs" t="Include" />
+          </e>
           <e p="WorldLoop.cs" t="Include" />
         </e>
       </e>
