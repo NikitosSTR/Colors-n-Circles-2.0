@@ -19,12 +19,12 @@ namespace GameSystem
         {
             _systems = new Feature("WorldLoop")
                     // init
-                    .Add(new TickSystem(_contexts))
                     .Add(new SpawnPlayerSystem(_contexts))
+                    .Add(new TickSystem(_contexts))
                     
                     // controls
-                    .Add(new InputControllSystem(_contexts))
                     .Add(new MoveSystem(_contexts))
+                    .Add(new InputControllSystem(_contexts))
                 ;    
             
             _systems.Initialize();

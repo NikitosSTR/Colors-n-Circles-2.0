@@ -4,22 +4,36 @@ using UnityEngine;
 
 namespace GameSystem.Systems
 {
-    public class InputControllSystem : IExecuteSystem
+    public class InputControllSystem : ReactiveSystem<InputEntity>
     {
         private Contexts _contexts;
         private IGroup<GameEntity> _players;
-        
-        public InputControllSystem(Contexts contexts)
+
+
+        public InputControllSystem(Contexts contexts) : base(contexts.input)
         {
             _contexts = contexts;
             _players = _contexts.game.GetGroup(GameMatcher.Player);
         }
 
-        public void Execute()
+        protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
         {
-            foreach (var entity in _players)
+            return context.CreateCollector(InputMatcher.Tick);
+        }
+
+        protected override bool Filter(InputEntity entity)
+        {
+            return true;
+        }
+
+        protected override void Execute(List<InputEntity> entities)
+        {
+            if (Input.GetKey(KeyCode.Space))
             {
-                entity.AddSpeed(1.0f);
+                foreach (var entity in _players)
+                {
+                    entity.ReplaceSpeed(entity.speed.value + 1.0f);
+                }
             }
         }
     }
