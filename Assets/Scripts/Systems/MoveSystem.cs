@@ -16,12 +16,12 @@ namespace GameSystem.Systems
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.Speed, GameMatcher.Rotation));
+            return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.Speed));
         }
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.hasSpeed && entity.hasGameObject;
+            return entity.hasSpeed;
         }
 
         protected override void Execute(List<GameEntity> entities)

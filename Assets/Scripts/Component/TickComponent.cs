@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameSystem.Component
 {
-    [Input, Game, Unique]
+    [Input, Unique]
     public class TickComponent : IComponent
     {
         public float value;

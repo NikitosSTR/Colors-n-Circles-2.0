@@ -13,13 +13,15 @@ namespace GameSystem.Systems
 
         public void Execute()
         {
-            _contexts.game.ReplaceTick(_contexts.input.tick.value + 1);
-            _contexts.input.ReplaceTick(_contexts.input.tick.value + 1);
+            if (!_contexts.input.isPause)
+            {
+                _contexts.input.ReplaceTick(_contexts.input.tick.value + 1);
+            }
         }
 
         public void Initialize()
         {
-            _contexts.game.ReplaceTick(0);
+            _contexts.input.isPause = false;
             _contexts.input.ReplaceTick(0);
         }
     }

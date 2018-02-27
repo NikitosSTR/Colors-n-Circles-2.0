@@ -23,8 +23,9 @@ namespace GameSystem
                     .Add(new TickSystem(_contexts))
                     
                     // controls
+                    .Add(new InputControlSystem(_contexts))
                     .Add(new MoveSystem(_contexts))
-                    .Add(new InputControllSystem(_contexts))
+                    .Add(new RotationSystem(_contexts))
                 ;    
             
             _systems.Initialize();

@@ -20,6 +20,7 @@ namespace GameSystem.Systems
             spawnEntity.AddGameObject(cube);
             spawnEntity.isPlayer = true;
             spawnEntity.AddSpeed(0.0f);
+            spawnEntity.AddRotation(0.0f);
         }
     }
 }

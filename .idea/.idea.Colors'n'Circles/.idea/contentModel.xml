@@ -19,17 +19,17 @@
           <e p="Component" t="Include">
             <e p="GameObjectComponent.cs" t="Include" />
             <e p="HealthComponent.cs" t="Include" />
+            <e p="PauseComponent.cs" t="Include" />
             <e p="PlayerComponent.cs" t="Include" />
             <e p="RotationComponent.cs" t="Include" />
             <e p="SpeedComponent.cs" t="Include" />
             <e p="TickComponent.cs" t="Include" />
           </e>
+          <e p="Description" t="Include">
+            <e p="PlayerDescription.cs" t="Include" />
+            <e p="WeaponDescription.cs" t="Include" />
+          </e>
           <e p="Generated" t="Include">
-            <e p="Components" t="Include">
-              <e p="Interfaces" t="Include">
-                <e p="ITick.cs" t="Include" />
-              </e>
-            </e>
             <e p="Contexts.cs" t="Include" />
             <e p="Feature.cs" t="Include" />
             <e p="game" t="Include">
@@ -39,7 +39,6 @@
                 <e p="GamePlayerComponent.cs" t="Include" />
                 <e p="GameRotationComponent.cs" t="Include" />
                 <e p="GameSpeedComponent.cs" t="Include" />
-                <e p="GameTickComponent.cs" t="Include" />
               </e>
               <e p="GameAttribute.cs" t="Include" />
               <e p="GameComponentsLookup.cs" t="Include" />
@@ -49,6 +48,7 @@
             </e>
             <e p="Input" t="Include">
               <e p="Components" t="Include">
+                <e p="InputPauseComponent.cs" t="Include" />
                 <e p="InputTickComponent.cs" t="Include" />
               </e>
               <e p="InputAttribute.cs" t="Include" />
@@ -59,8 +59,9 @@
             </e>
           </e>
           <e p="Systems" t="Include">
-            <e p="InputControllSystem.cs" t="Include" />
+            <e p="InputControlSystem.cs" t="Include" />
             <e p="MoveSystem.cs" t="Include" />
+            <e p="RotationSystem.cs" t="Include" />
             <e p="SpawnPlayerSystem.cs" t="Include" />
             <e p="TickSystem.cs" t="Include" />
           </e>
